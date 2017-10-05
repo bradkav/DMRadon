@@ -27,12 +27,12 @@ The procedures are:
 ```python
 VelDist(v, theta, phi, vlag=220.0, sigv=156.0, vesc=533.0)
 SpeedDist(v, vlag=220.0, sigv=156.0, vesc=533.0)
-VelDist_disc(v, j, N_bins,vlag=220.0, sigv=156.0, vesc=533.0)
+VelDist_avg(v, j, N_bins,vlag=220.0, sigv=156.0, vesc=533.0)
 Eta(vmin, vlag=220.0, sigv=156.0, vesc=533.0)
 RadonTransform(vmin, theta, phi, vlag=220.0, sigv=156.0, vesc=533.0)
 ```
 
-The arguments should be reasonably self explanatory (and I'll add better documentation soon). In the case of `VelDist_disc`, the function returns the velocity distribution, averaged over an angular bin. In this case, the directions are divided into `N_bins` bins and the average is taken over bin number `j = 1, 2,.., N_bins`, where `j = 1` is centred on the median DM velocity and `j = N_bins` is centred on the opposite direction.
+The arguments should be reasonably self explanatory (and I'll add better documentation soon). In the case of `VelDist_avg`, the function returns the velocity distribution, averaged over an angular bin. In this case, the directions are divided into `N_bins` bins and the average is taken over bin number `j = 1, 2,.., N_bins`, where `j = 1` is centred on the median DM velocity and `j = N_bins` is centred on the opposite direction.
 
 Most of the functions accept the following option arguments:
 - `vlag = 220.0`, the speed of the lab with respect to the DM halo (the 'lag speed')  

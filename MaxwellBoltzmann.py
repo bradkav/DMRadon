@@ -55,12 +55,16 @@ def SpeedDist(v, vlag=220.0, sigv=156.0, vesc=533.0):
         
 
 #----------------------------------------------------
-# Calculate the discretised velocity distribution
+# Calculate the averaged velocity distribution
 # i.e. average f(\vec{v}) over bins
 # N_bins is the number of angular bins
 # j = 1..N_bins is the index of the bin, 
 # with j = 1 being the most forward
-def VelDist_disc(v, j, N_bins,vlag=220.0, sigv=156.0, vesc=533.0):
+# Note that this is calculated by integrating over the angular
+# bin then dividing by the angular size of the bin (i.e. average)
+# so to obtain the speed distribution, you still need to 
+# multiply by the angular size of each bin...
+def VelDist_avg(v, j, N_bins,vlag=220.0, sigv=156.0, vesc=533.0):
 
     #Calculate some normalisation factors
     normalisation = ((v**(-1))/(sigv*vlag*np.sqrt(2*np.pi)))
@@ -82,7 +86,7 @@ def VelDist_disc(v, j, N_bins,vlag=220.0, sigv=156.0, vesc=533.0):
     else:
         vel_dist[(v**2 + vlag**2 - vesc**2)/(2*v*vlag) > np.cos(((j)-1)*np.pi*1.0/N_bins)] = 0.0*vel_dist[(v**2 + vlag**2 - vesc**2)/(2*v*vlag) > np.cos(((j)-1)*np.pi*1.0/N_bins)]
     
-    return normalisation*vel_dist
+    return normalisation*vel_dist/(frac*2*np.pi)
     
     
 #----------------------------------------------------
