@@ -1,6 +1,6 @@
 # DMRadon
 
-[![arXiv](https://img.shields.io/badge/arXiv-1502.04224-B31B1B.svg)](https://arxiv.org/abs/1502.04224) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![arXiv](https://img.shields.io/badge/arXiv-1502.04224-B31B1B.svg)](https://arxiv.org/abs/1502.04224) [![ASCL](https://img.shields.io/badge/ascl-2002.012-blue.svg?colorB=262255)](https://ascl.net/2002.012) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 Tools for calculating the Radon Transform, for use in the analysis of Directional Dark Matter Direct Detection. Currently the code allows you to calculate speed distributions and Radon Transforms only for a standard Maxwell-Boltzmann distribution.
 
